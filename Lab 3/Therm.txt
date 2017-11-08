@@ -1,0 +1,32 @@
+package Thermostatcoolio;
+public class Therm {
+int temperature;
+int upperRange = 150;
+int lowerRange = -50;
+public Therm(int temperature) {
+this.temperature = temperature;
+}
+public void setTemperature(int temperature) {
+try {
+if (temperature < lowerRange) {
+    throw new TooLow();
+} else if (temperature > upperRange) {
+    throw new TooHigh();
+} else {
+    this.temperature = temperature;
+}
+} catch (TooHigh e) {
+System.out.println("too High");
+} catch (TooLow e) {
+System.out.println("Too low");
+} catch (OutOfRange e) {
+System.out.println("Try again");
+}
+
+}
+
+public int getTemperature() {
+return temperature;
+}
+
+}

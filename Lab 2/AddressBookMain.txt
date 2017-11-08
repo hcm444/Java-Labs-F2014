@@ -1,0 +1,89 @@
+//Henry Meier 10/1/14
+//Lab 2 Part A
+
+package addressbook;
+import java.util.ArrayList;
+public class AddressBookMain {
+Book address;
+public AddressBookMain() {
+address = new Book();
+Input(new java.util.Scanner(System.in));
+}
+public static void menu() {
+System.out.print("\nMenu : [");
+System.out.print("1. Quit, ");
+System.out.print("2. Add, ");
+System.out.print("3. Delete, ");
+System.out.print("4. Search, ");
+System.out.print("5. Display]\n");
+System.out.print("");
+}
+public void Input(java.util.Scanner scanner) {
+menu();
+String input = "";
+while (!(input = scanner.nextLine()).equals("1")) {
+    if (input.equals("2")) {
+        System.out.print("last name    : ");
+        String lname = scanner.nextLine();                
+        System.out.print("first name   : ");
+        String fname = scanner.nextLine();
+        System.out.print("phone number : ");
+        String phone = scanner.nextLine();
+        address.addContact(lname, fname, phone);
+    } else if(input.equals("3")) {
+        System.out.print("Delete       : ");
+        address.removeContact(scanner.nextLine());
+    } else if(input.equals("4")) {
+        System.out.print("Search       : ");
+        address.searchContact(scanner.nextLine()); 
+    } else if(input.equals("5")) {
+        address.displayContacts();
+    }
+    menu();
+}
+}
+public static void main(String[] args) {
+AddressBookMain newb = new AddressBookMain();
+}
+}
+class Book {
+private ArrayList<Contacts> list;
+public Book() {
+list = new ArrayList<Contacts>();
+}
+public void addContact(String l, String f, String p) {
+Contacts c = new Contacts(l, f, p);
+list.add(c);
+}
+public void displayContacts() {
+System.out.println("PhoneBook: ");
+java.util.Iterator it = list.iterator();
+while (it.hasNext()) {
+    Contacts c = (Contacts) it.next();
+    System.out.println(c.toString());
+}
+}
+public void removeContact(String searchStr) {        
+java.util.Iterator it = list.iterator();
+while (it.hasNext()) {
+    Contacts c = (Contacts) it.next();
+    if (c.GetLastName().equals(searchStr)) {
+        System.out.println("the contact " + c.toString() + " was deleted.");
+    }
+}
+}
+public void searchContact(String searchStr) {
+boolean found = false;        
+for (int i = 0; i < list.size(); i++) {
+    Contacts c = (Contacts) list.get(i);
+    if (c.GetLastName().equals(searchStr)) {
+        System.out.println(c.toString());
+        found=true;
+    }
+}
+if (!found) {
+    System.out.println("the contact " + searchStr + " was not found.");
+}        
+}
+}
+

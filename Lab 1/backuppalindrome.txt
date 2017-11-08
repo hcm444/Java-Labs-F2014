@@ -1,0 +1,58 @@
+
+package palindromes;
+
+import java.io.File;      // needed for File class
+import java.util.Scanner; // needed for input processing using Scanner
+
+public class Palindromes {
+    public static boolean isPalindrome(String s) { 
+    //class for discovering palindromes
+        int first, last;
+        // first and last characters in string
+        first = 0;
+        last = s.length() - 1;
+        while (first < last) 
+        //because
+        {
+            if (s.charAt(first) != s.charAt(last)) {
+                return false;
+                //the chars are not equal so it's
+                //not a palindrome sorry loser
+            }
+            first++;
+            //increment from front
+            last--;
+            //increment from back
+        }
+        return true;
+        //if the first and last letters working inwards are proportional
+        //it's a palindrome
+    }
+    public static void main(String args[]) throws Exception {
+        File infile = new File("C://words.txt"); 
+        //words.txt should be on your c drive
+        //open file
+        Scanner poop = new Scanner(infile);
+        //get scanner poop going
+        while (poop.hasNext()) {
+            String word = poop.nextLine();
+            if (isPalindrome(word)) 
+            {
+                System.out.println(word 
+                        + " is " 
+                        + word.length() 
+                        + " characters long");
+                //display outputs
+                if (word.length() == 9) 
+                //finding the longest palindrome
+                {
+                    System.out.println("                        ");
+                    System.out.printf("Longest palindrome: %s\n", word);
+                    System.out.println("                        ");
+                    //make the longest palindrome easy to see
+                }//end longest palindrome output statement
+            }//end output statement
+        }//end scanner statement
+        poop.close();
+    }//end class
+}//end main

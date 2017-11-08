@@ -1,0 +1,65 @@
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+
+public class Library {
+    private ArrayList<Book> books;
+
+    public Library() {
+        books = new ArrayList<>();
+    }
+    
+    public void addBook(Book b){
+        books.add(b);
+    }
+    
+    public String SearchBySubject(String s){
+        String text="";
+        for (Book book : books) {
+            if(book.getHeadlings().contains(s)){
+                text+="Title: "+book.getTitle()+"\nAuthors: "+book.getAuthors().toString()+"\nLibrary of Congress catalog number: "+book.getCatalogNumber()+"\n";
+            }
+        }
+        return text;
+    }
+    
+    public void save(File file){
+        FileOutputStream fout = null;
+        try {
+            fout = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(books);
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        } finally {
+            try {
+                fout.close();
+            } catch (IOException ex) {
+            }
+        }
+    }
+    
+    public void retrieve(File file){
+        FileInputStream streamIn = null;
+        try {
+            streamIn = new FileInputStream(file);
+            ObjectInputStream objectinputstream = new ObjectInputStream(streamIn);
+            books = (ArrayList<Book>) objectinputstream.readObject();
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        } finally {
+            try {
+                streamIn.close();
+            } catch (IOException ex) {
+            }
+        }
+    }
+}

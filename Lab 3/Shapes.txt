@@ -1,0 +1,19 @@
+package shapes;
+
+public abstract class Shapes {
+
+    private int shapeID;
+    private static int nextID = 10;
+
+    public Shapes() {
+        shapeID = nextID;
+        nextID++;
+    }
+
+    public int getID() {
+        return shapeID;
+    }
+
+    /* Moves the shape in the x, y and z directions. */
+    public abstract void move(double a, double b, double c);
+}

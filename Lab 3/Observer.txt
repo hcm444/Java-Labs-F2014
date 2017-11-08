@@ -1,0 +1,28 @@
+package randomwalker;
+
+public class Observer implements RandomWalkerObserver {
+
+private int threshold;
+private int position;
+
+public Observer(int threshold) {
+    this.threshold = threshold;
+    position = 0;
+}
+
+@Override
+public void move(RandomEvent e) {
+
+    position = position + e.getDirection();
+
+    if (position == threshold) {
+
+        System.out.println("The walker moved to position " + threshold);
+        addToRemoveList(e.getRandomWalker());
+    }
+}
+
+public void addToRemoveList(RandomWalker w) {
+    w.removeObserver(this);
+}
+}

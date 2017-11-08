@@ -1,0 +1,32 @@
+run:
+getName: John Doe
+getOrganization: Berkeley City College
+#####################################
+###     ANNUAL CONFERENCE         ###
+#####################################
+### NAME:John Doe                 ###
+###                               ###
+#####################################
+### ORGANIZATION:                 ###
+### Berkeley City College         ###
+#####################################
+_________________________________________
+testTag.toString method: 
+Name: John Doe
+Organization: Berkeley City College
+_________________________________________
+testTag method: 
+Name: John Doe
+Organization: Berkeley City College
+_________________________________________
+Print blank tag: 
+#####################################
+###     ANNUAL CONFERENCE         ###
+#####################################
+### NAME:                         ###
+###                               ###
+#####################################
+### ORGANIZATION:                 ###
+###                               ###
+#####################################
+BUILD SUCCESSFUL (total time: 0 seconds)

@@ -1,0 +1,77 @@
+//Henry Meier 9/13/2014
+//Lab 1 Part D
+
+package tagmaker;
+
+public class TagMaker { //class tagmaker makes tags
+
+    private String name;
+    private String organization;
+
+    public TagMaker() {
+        name = "";
+        organization = "";
+    }
+
+    public TagMaker(String n, String org) {
+        name = n;
+        organization = org;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setOrganization(String newOrganization) {
+        organization = newOrganization;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public String toString() {
+        return ("Name: " + name + "\nOrganization: " + organization);
+    }
+
+    public void printTag() {
+        System.out.println("#####################################");
+        System.out.println("###     ANNUAL CONFERENCE         ###");
+        System.out.println("#####################################");
+
+        if (name.length() < 22) {
+            System.out.printf("### NAME:%-24s ###", name);
+            System.out.println("\n###                               ###");
+        } else {
+            System.out.println("### NAME:                     ###");
+            System.out.printf("### %-27s", name, " ###");
+        }
+        System.out.println("#####################################");
+
+        if (organization.length() < 13) {
+            System.out.printf("### ORGANIZATION:%-17s###", organization);
+            System.out.println("\n###                               ###");
+            System.out.println("#####################################");
+        } else {
+            System.out.println("### ORGANIZATION:                 ###");
+            System.out.printf("### %-30s###", organization);
+            System.out.println("\n#####################################");
+        }
+
+    }
+
+    private void clearTag() {
+        name = " ";
+        organization = " ";
+    }
+
+    public void printBlankTag() {
+        clearTag();
+        printTag();
+    }
+
+}

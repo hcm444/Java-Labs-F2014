@@ -1,0 +1,40 @@
+//Henry Meier 9/11/2014
+//Lab 1 Part A Chapter 3 Question 7
+//factorials
+package factorialproblem;
+import java.util.Scanner;
+public class FactorialProblem
+{
+	public static void main(String[] args)
+	{
+		double sum = 1.0, oper = 0.0, deno = 0.0, num = 0.0, x = 0.0; //variables for
+                //the sum, operand, denomonator, numerator, and a rechangable input value x
+		int i, i2, n = 100; //iterations 1 and 2 aswell as factor n
+		Scanner ass = new Scanner(System.in); //get scanner going
+
+		while (x >= 0) //while loop for e^x 1 - 10
+		{
+			System.out.println("Enter the value of x in the equation 'e^x'");
+			System.out.println("Enter a negative number to exit: ");
+			x = ass.nextDouble(); //input x
+			if (x < 0)
+				System.exit(0);
+			for (i = 1; i <= n; i++)
+			{
+				deno = i; //denomonator
+                                oper = x; //operand
+				num = x;  //numerator
+				for (i2 = 1; i2 < i; i2++)
+				{	
+					num *= x;
+					deno *= (i - i2);
+				}
+				oper = num / deno;
+				sum += oper;
+				if ( i <= 10 || i == 50 || i == 100) //finding 10, 50, and 100
+					System.out.println("The value e^x when n is " + i + " is: " + sum);
+                                //output
+			}
+		}
+	}
+}

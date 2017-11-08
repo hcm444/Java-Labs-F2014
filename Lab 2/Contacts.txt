@@ -1,0 +1,34 @@
+//Henry Meier 10/1/14
+//Lab 2 Part A
+package addressbook;
+public class Contacts {
+private String lname;
+private String fname;
+private String phone;
+public Contacts(String l, String f, String p) {
+    lname = l;
+    fname = f;
+    phone = p;
+}
+public void LastName(String l) {
+    lname = l;
+}
+public void FirstName(String f) {
+    fname = f;
+}
+public void PhoneNumber(String p) {
+    phone = p;
+}
+public String GetLastName() {
+    return lname;
+}
+public String GetFirstName() {
+    return fname;
+}
+public String GetPhoneNumber() {
+    return phone;
+}
+public String toString() {
+    return (lname + "," + fname + "\t " + phone);
+}    
+}

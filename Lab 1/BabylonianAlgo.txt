@@ -1,0 +1,41 @@
+//Henry Meier 9/10/2014
+//Lab 1 Part A Chapter 3 Question 1
+
+package babylonianalgo;
+
+import java.util.Scanner; //run scanner
+
+public class BabylonianAlgo
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("input one number for your guess ");
+		double n = sc.nextDouble();
+
+		double guess = (n / 2);							
+		double guess2 = 0.00;
+		double r = 0.00;
+
+		do
+		{
+			guess2 = guess;
+                        
+			r = (n / guess);
+                        
+			guess = (guess + r) / 2;
+                        
+			if (guess2 < guess)
+                        
+                            guess2 = guess2 / guess;
+                        
+			else
+				guess2 = guess / guess2;
+                                        
+		} while ( (guess2 <= 0.99) );
+
+		System.out.println("The root");
+		System.out.printf("of " + n + " is: %.2f", guess);
+	}
+}

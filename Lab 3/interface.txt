@@ -1,0 +1,7 @@
+
+package randomwalker;
+
+public interface RandomWalkerObserver {
+    
+    public void move(RandomEvent e);
+}

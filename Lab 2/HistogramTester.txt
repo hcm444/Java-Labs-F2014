@@ -1,0 +1,28 @@
+//Henry Meier 10/13/14
+//Lab 2 Part B
+package histogram;
+public class HistogramTester {
+    public static void main(String[] args) {
+        Histogram hist1 = new Histogram(0, 1);
+        for (int i = 0; i < 10000; i++) {
+            hist1.add(Math.random());
+        }
+        System.out.println("Frequency:");
+        hist1.plotFrequency(100);
+        System.out.println("Cumulative Frequency:");
+        hist1.plotCumulative(1000);
+        Histogram hist2 = new Histogram(0, 10);
+        double sum = 0;
+        for (int j = 0; j < 1000; j++) {
+            sum = 0;
+            for (int i = 0; i < 10; i++) {
+                sum += Math.random();
+            }
+            hist2.add(sum);
+        }
+        System.out.println("Frequency:");
+        hist2.plotFrequency(10);
+        System.out.println("Cumulative Frequency:");
+        hist2.plotCumulative(100);
+    }
+}

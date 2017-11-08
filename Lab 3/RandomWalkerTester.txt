@@ -1,0 +1,12 @@
+package randomwalker;
+
+public class RandomWalkerTester {
+    public static void main (String args[])
+    {
+        RandomWalker m = new RandomWalker();
+        Observer o = new Observer(5);
+        
+        m.addObservers(o);
+        m.walk();
+    }
+}

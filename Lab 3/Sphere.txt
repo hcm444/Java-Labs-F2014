@@ -1,0 +1,38 @@
+package shapes;
+
+public class Sphere extends ThreeDimensionalShape {
+
+    private double radius;
+    private Point p;
+
+    public Sphere(double r, Point p) {
+        super();
+        this.radius = r;
+        this.p = p;
+    }
+
+    public void setPoint(Point p) {
+        this.p = p;
+    }
+
+    public void setRadius(double r) {
+        this.radius = r;
+
+    }
+
+    @Override
+    public double getVolume() {
+        return Math.PI * 4 / 3 * radius * radius
+                * radius;
+    }
+
+    @Override
+    public double getArea() {
+        return 4 * Math.PI * radius * radius;
+    }
+
+    @Override
+    public void move(double a, double b, double c) {
+        p.move(a, b, c);
+    }
+}

@@ -1,0 +1,70 @@
+
+package randomwalker;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class RandomWalker {
+
+private ArrayList<RandomWalkerObserver> observerList;
+private ArrayList<RandomWalkerObserver> removeList;
+
+public RandomWalker() {
+observerList = new ArrayList<>();
+removeList = new ArrayList<>();
+
+}
+
+public void addObservers(RandomWalkerObserver o) {
+
+observerList.add(o);
+}
+
+public void removeObserver(RandomWalkerObserver o) {
+removeList.add(o);
+}
+
+public void walk(){
+RandomEvent e;
+int totalsteps = 0;
+
+while(observerList.size() > 0) {
+
+Random n = new Random();
+double r = n.nextDouble();
+
+
+if (r < 0.5) {
+    e = new RandomEvent(-1, this);
+} else {
+    e = new RandomEvent(+1, this);
+}
+
+for (int i = 0 ; i < observerList.size(); i++){
+    observerList.get(i).move(e);
+}
+
+
+totalsteps++;
+System.out.println("The random walker has taken " + totalsteps + " steps.");
+
+if (removeList.size() > 0) {
+    for (int i = 0; i < removeList.size(); i ++){
+        for (int j = 0; j < observerList.size(); j++) {
+            if (removeList.get(i) == observerList.get(j)) {
+                observerList.remove(j);
+            }
+        }
+    }
+}
+
+try { 
+    Thread.sleep(10);
+} catch (InterruptedException ie) {
+    break;
+}
+
+}
+
+}
+}

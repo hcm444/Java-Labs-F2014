@@ -1,0 +1,27 @@
+run:
+Input name of item 1:
+ass flavor 4 loko
+Input quantity of item 1:
+3
+Input price of item 1:
+200
+Input name of item 2:
+malt liquor
+Input quantity of item 2:
+5
+Input price of item 2:
+10
+Input name of item 3:
+veal cutlets
+Input quantity of item 3:
+50
+Input price of item 3:
+40
+Item                          Quantity  Price     Total     
+ass flavor 4 loko             3         200.00    600.00    
+malt liquor                   5         10.00     50.00     
+veal cutlets                  50        40.00     2000.00   
+Subtotal                                          2650.00   
+6.25% sales tax                                   165.63    
+Total                                             2815.63   
+BUILD SUCCESSFUL (total time: 57 seconds)

@@ -1,0 +1,10 @@
+package shapes;
+
+public abstract class TwoDimensionalShape extends Shapes {
+
+    public TwoDimensionalShape() {
+        super();
+    }
+
+    public abstract double getArea();
+}

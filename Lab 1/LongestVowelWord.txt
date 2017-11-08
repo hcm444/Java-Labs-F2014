@@ -1,0 +1,66 @@
+//Henry Meier 9/20/14
+//Lab 1 Part A Chapter 3 Qestion 14
+
+package longestvowelword;
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class LongestVowelWord {
+public static void main(String[] args) {
+
+Scanner sc = null;
+try {
+    sc = new Scanner(new FileInputStream("C://words.txt")); 
+    // words.txt should be in C drive
+} catch (FileNotFoundException e) {
+    System.out.println("File not found."); //output if file not found
+    System.exit(0); //end program if nothing found
+}
+String w; //for answer, kind of a private variable
+String Answer = ""; //final answer space
+int i, l; //storage, length
+int count = 0; //counter
+int TheLongest = 0;  //final value for longest word
+String letter; //string for reading words in words.txt
+Boolean isVowel; //if vowel
+
+boolean True = sc.hasNextLine(); //chack next line
+while (True == true) {
+    w = sc.nextLine(); //loop for longest word
+    l = w.length();
+    count = 0;
+
+    for (i = 0; i < l; i++) //loop for most vowels
+        {
+        letter = w.substring(i, i + 1);
+        isVowel = (letter.equalsIgnoreCase("a") //check for a
+                
+                || letter.equalsIgnoreCase("e") //check for e
+                
+                || letter.equalsIgnoreCase("i") //check for i
+                
+                || letter.equalsIgnoreCase("o") //check for o
+                
+                || letter.equalsIgnoreCase("u")); //check for u
+        if (isVowel) //if vowel detected...
+        {
+            count++; //increment until...
+        } else 
+        {
+        if (count > TheLongest) //you have found the longest then...
+        {
+            TheLongest = count; //set it to the longest and...
+            Answer = w; //set it's length to Answer
+        }
+            count = 0;
+        }
+    }
+    True = sc.hasNextLine();
+}
+System.out.printf("The word with the longest "
+        + "vowel string is %s\n", Answer); 
+//output the longest word with the most vowels
+} //end main
+} //end class

@@ -1,0 +1,47 @@
+//Henry Meier 10/13/14
+//Lab 2 Part B
+package deck;
+public class Deck {
+enum Suits {
+H, C, D, S
+};
+final String[] Values = {"A", "2", "3", "4", "5", "6", 
+    "7", "8", "9", "10", "J", "Q", "K"};
+private String[] d;
+public Deck() {
+this.d = new String[52];
+int i = 0;
+for (Suits suit : Suits.values()) {
+    for (String value : Values) {
+        d[i] = value + suit;
+        i++;
+    }
+}
+}
+public void shuffle() {
+String newDeck[] = new String[52];
+for (int i = 0; i < 26; i++) {
+    newDeck[2 * i] = d[i];
+    newDeck[2 * i + 1] = d[i + 26];
+}
+d = newDeck;
+}
+public String toString() {
+String deckString = "";
+for (int i = 0; i < d.length; i++) {
+    deckString += d[i] + " ";
+    if (((i + 1) % 13) == 0) {
+        deckString += "\n";
+    }
+}
+return deckString;
+}
+public boolean equals(Deck aDeck) {
+for (int i = 0; i < d.length; i++) {
+    if (!this.d[i].equals(aDeck.d[i])) {
+        return false;
+    }
+}
+return true;
+}
+}

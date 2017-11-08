@@ -1,0 +1,45 @@
+//Henry Meier 9/1/2014
+//Chapter 2 Question 7
+//get money or die tryin'
+
+
+package changemaker;
+
+import java.util.Scanner; //import the scanner
+
+public class ChangeMaker {
+
+    public static void main(String[] args) {
+        int i, c, r, q, d, n;
+        //variables for input, change, remainder, quarters, dimes, and nickels
+
+        Scanner keyboard = new Scanner(System.in);
+        //get the scanner going
+        System.out.println("Enter price of an item"
+                + " (from 25 cents to a dollar, in"
+                + " 5-cent increments):");
+        //initialize instructions
+        i = keyboard.nextInt();
+        c = 100 - i;
+        //enter input and then 100 minus input is the change value
+        q = c / 25;
+        //seperate quarters
+        r = c % 25;
+        //set price to remainder
+        d = r / 10;
+        //seperate dimes
+        r %= 10;
+        //set price to remainder
+        n = r / 5;
+        //seperate nickels
+        System.out.println("You bought an item for "
+                + i + " cents and gave me a dollar,"
+                + " so your change is:");
+        //display output
+        System.out.println(q + " quarters");
+        System.out.println(d + " dimes, and");
+        System.out.println(n + " nickels");
+
+    }//end of class
+
+}//end of program

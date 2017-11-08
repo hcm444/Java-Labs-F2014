@@ -1,0 +1,38 @@
+run:
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+2
+last name    : Meier
+first name   : Henry
+phone number : 408-710-5241
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+2
+last name    : Ass
+first name   : Mcflour
+phone number : 666-454-3333
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+5
+PhoneBook: 
+Meier,Henry	 408-710-5241
+Ass,Mcflour	 666-454-3333
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+4
+Search       : Mcflour
+the contact Mcflour was not found.
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+4
+Search       : Ass
+Ass,Mcflour	 666-454-3333
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+3
+Delete       : Ass
+the contact Ass,Mcflour	 666-454-3333 was deleted.
+
+Menu : [1. Quit, 2. Add, 3. Delete, 4. Search, 5. Display]
+1
+BUILD SUCCESSFUL (total time: 1 minute 16 seconds)

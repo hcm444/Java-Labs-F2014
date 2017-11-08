@@ -1,0 +1,13 @@
+package shapes;
+
+public class Point extends ZeroDimensionalShape {
+
+    public Point(double x, double y, double z) {
+        super(x, y, z);
+    }
+
+    @Override
+    public String toString() {
+        return "Point at coordinates: (" + getX() + ", " + getY() + ", " + getZ() + ").";
+    }
+}

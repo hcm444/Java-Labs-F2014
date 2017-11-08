@@ -1,0 +1,53 @@
+
+package person;
+
+public class Person {
+
+    protected String firstName;
+    protected String lastName;
+    private static int lastID = 1000;
+    private static int ID;
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ID = lastID + 1;
+        lastID++;
+    }    
+    public Person(Person originalPerson){
+        firstName = originalPerson.firstName;
+        lastName = originalPerson.lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void printFirstName() {
+        System.out.println(firstName);
+    }
+
+    public void printLastName() {
+        System.out.println(lastName);
+    }
+
+    public void printID() {
+        System.out.println(ID);
+    }
+
+    public void printFullName() {
+        System.out.println(firstName + " " + lastName);
+    }
+
+    public String toString() {
+        return (firstName + " " + lastName + " " + ID);
+    }
+}

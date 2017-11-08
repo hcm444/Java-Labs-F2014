@@ -1,0 +1,37 @@
+package shapes;
+
+public abstract class ZeroDimensionalShape extends Shapes {
+
+    private double x, y, z;
+
+    public ZeroDimensionalShape(double x, double y, double z) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public void setCoordinates(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public void move(double a, double b, double c) {
+        this.x = x + a;
+        this.y = y + b;
+        this.z = z + c;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getZ() {
+        return z;
+    }
+}

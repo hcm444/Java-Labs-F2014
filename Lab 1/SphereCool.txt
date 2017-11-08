@@ -1,0 +1,61 @@
+//Henry Meier 9/17/2014
+//Lab 1 Part B
+package spherecool; //I call it spherecool because sphere was taken
+
+public class SphereCool {
+double x, y, z, r, a, v; //area, volume, radius, x, y, z
+double pi = (22/7);
+
+public void X(double value)
+{
+    x = value;
+}
+public double getX()
+{
+    return x;
+}
+public void Y(double value)
+{
+    y = value;
+}
+public double getY()
+{
+    return y;
+}
+public void Z(double value)
+{
+    z = value;
+}
+public double getZ()
+{
+    return z;
+}
+public void setR(double value){ //
+    if (value < 0) {
+        System.out.println("radius can't be negative");
+    } else { 
+        r = value;
+        a = (4*r*r*pi);
+        v = (4*pi*r*r*r*(1.0/3));
+    }  
+}
+public double R(){ 
+    return r;
+}
+public double A(){
+    return a;
+}
+public double V(){
+    return v;
+}
+
+public void Atts(){
+  System.out.println("The coordinates of this sphere are");
+  System.out.println(x +","+ y + "," + z);
+  System.out.println("With a radius of:");
+  System.out.println(r);
+  System.out.println("The surface area of this sphere is equal to " 
+          + A());
+  System.out.println("The volume of this sphere is equal to " + V());     
+}
+}

@@ -1,0 +1,40 @@
+package person;
+public class FullTimeEmployee extends Employee {
+    private Double annualSalary;
+    protected final Double weeklyHours = 40.0;
+    public FullTimeEmployee(String lastName, String firstName, String department,
+            Double annualSalary) {
+        super(lastName, firstName, department);
+        this.annualSalary = annualSalary;
+    }
+    public FullTimeEmployee(FullTimeEmployee otherFullTimeEmployee) {
+        super(otherFullTimeEmployee);
+        annualSalary = otherFullTimeEmployee.annualSalary; 
+    }
+    @Override
+    public Double getAverageWeeklyHours() {
+        return weeklyHours;
+    }
+    public void setSalary(Double annualSalary) { 
+        if (annualSalary >= 0) {
+            this.annualSalary = annualSalary;
+        }
+    }
+    public Double getSalary() {
+        return annualSalary;
+    }
+    @Override
+    public Double getmonthlyWages() {
+        if (annualSalary > 0 && weeklyHours > 0) {
+            return annualSalary;
+        }
+        return 0.0;
+    }
+    @Override
+    public void printEmployee() {
+        System.out.printf("Employee: %s, %s%n", lastName, firstName);
+        System.out.printf("Total hours worked (four week total): %.2d%n", 4.0 * weeklyHours);
+        System.out.printf("Average hours worked per week: %.2d%n", weeklyHours);
+        System.out.printf("Total wages (four week total): %d", annualSalary / 12.0);
+    }
+}

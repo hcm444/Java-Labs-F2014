@@ -1,0 +1,55 @@
+//Henry Meier 912014
+//Lab 1 Part A Chapter 3 Question 8
+//too too too good
+
+
+package cryptographic;
+
+public class Cryptographic;
+        {
+	public static void main(String[] args)
+	{
+		System.out.println("The solution to the problem");
+		System.out.println("TOO + TOO + TOO + TOO = GOOD");
+		System.out.println("is");
+
+		int O, T, D, G;
+		for(T = 0; T < 10; T++) //checks possibilities T logic from 0 to 10
+		{
+			for(O = 0; O < 10; O++) //checks possibilities O logic from 0 to 10
+			{
+				for(G = 0; G < 10; G++) // checks possibilities G logic from 0 to 10
+				{
+					for(D = 0; D < 10; D++) // checks possibilities D logic from 0 to 10
+					{
+						 //logic
+						
+						if ( ((((T * 100) 
+                                                        + (O * 10) 
+                                                        + (O)) * 4) ==
+							((G * 1000) 
+                                                        + (O * 100) 
+                                                        + (O * 10) 
+                                                        +(D))) &&
+							((T != O) && 
+                                                        (T != G) && 
+                                                        (T != D) && 
+                                                        (O != G) &&
+							(O != D) && 
+                                                        (G != D)) )
+                                                    //output
+						{
+							System.out.println("T = " + T + ", O = " + O +
+									", G = " + G + ", D = " + D);
+							System.exit(0);
+						}
+					} //end D loop
+					D = 0; //reset D
+				} ///end  G loop
+				G = 0; //reset G
+			} //end O loop
+			O = 0; //reset O
+		} //end T loop
+		System.out.println("There is no solution.");
+	} //end main
+} //end class

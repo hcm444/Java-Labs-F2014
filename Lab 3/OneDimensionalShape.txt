@@ -1,0 +1,27 @@
+package shapes;
+
+public abstract class OneDimensionalShape extends Shapes {
+
+    private Point p1;
+    private Point p2;
+
+    public OneDimensionalShape(Point p1, Point p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+    }
+
+    public double getLength() {
+        double l, x2, y2, z2;
+        x2 = Math.pow(p1.getX() - p2.getX(), 2);
+        y2 = Math.pow(p1.getY() - p2.getY(), 2);
+        z2 = Math.pow(p1.getZ() - p2.getZ(), 2);
+        l = Math.sqrt(x2 + y2 + z2);
+        return l;
+    }
+
+    @Override
+    public void move(double a, double b, double c) {
+        p1.move(a, b, c);
+        p2.move(a, b, c);
+    
+}

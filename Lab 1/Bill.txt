@@ -1,0 +1,72 @@
+//Henry Meier 9/4/2014
+//Lab 1 Part A Chapter 2 Question 10
+//Henry goes to the store
+package bill;
+
+import java.util.Scanner;
+
+public class Bill {
+
+    public static void main(String[] args) {
+        String i1, i2, i3;
+        //item 1,2,3
+        int q1, q2, q3;
+        //quantity 1,2,3
+        double c1, c2, c3, t1, t2, t3;
+        //cost 1,2,3 total 1,2,3
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Input name of item 1:");
+        i1 = sc.nextLine();
+        System.out.println("Input quantity of item 1:");
+        q1 = sc.nextInt();
+        System.out.println("Input price of item 1:");
+        c1 = sc.nextDouble();
+        sc.nextLine();
+
+        t1 = c1 * q1;
+
+        System.out.println("Input name of item 2:");
+        i2 = sc.nextLine();
+        System.out.println("Input quantity of item 2:");
+        q2 = sc.nextInt();
+        System.out.println("Input price of item 2:");
+        c2 = sc.nextDouble();
+        sc.nextLine();
+
+        t2 = c2 * q2;
+
+        System.out.println("Input name of item 3:");
+        i3 = sc.nextLine();
+        System.out.println("Input quantity of item 3:");
+        q3 = sc.nextInt();
+        System.out.println("Input price of item 3:");
+        c3 = sc.nextDouble();
+        sc.nextLine();
+
+        t3 = c3 * q3;
+
+        double tot, tax, sub;
+        sub = t1 + t2 + t3;
+        tax = 0.0625 * sub;
+        tot = tax + sub;
+
+        System.out.printf("%-30s%-10s%-10s%-10s%n",
+                "Item", "Quantity", "Price", "Total");
+        System.out.printf("%-30s%-10d%-10.2f%-10.2f%n",
+                i1, q1, c1, t1);
+        System.out.printf("%-30s%-10d%-10.2f%-10.2f%n",
+                i2, q2, c2, t2);
+        System.out.printf("%-30s%-10d%-10.2f%-10.2f%n",
+                i3, q3, c3, t3);
+        System.out.printf("%-30s%-10s%-10.2s%-10.2f%n",
+                "Subtotal", "", "", sub);
+        System.out.printf("%-30s%-10s%-10.2s%-10.2f%n",
+                "6.25% sales tax", "", "", tax);
+        System.out.printf("%-30s%-10s%-10.2s%-10.2f%n",
+                "Total", "", "", tot);
+
+    }
+
+}

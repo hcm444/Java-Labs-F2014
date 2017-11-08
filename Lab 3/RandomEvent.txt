@@ -1,0 +1,20 @@
+package randomwalker;
+
+public class RandomEvent {
+
+    private int direction;
+    private RandomWalker w;
+
+    public RandomEvent(int direction, RandomWalker w) {
+        this.direction = direction;
+        this.w = w;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public RandomWalker getRandomWalker() {
+        return w;
+    }
+}

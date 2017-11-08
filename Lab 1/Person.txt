@@ -1,0 +1,50 @@
+//Henry Meier 912014
+//Lab 1 Part C 
+//people
+
+package person;
+
+public class Person { //new class person
+
+private String firstName, lastName;  //string
+static int nextID=1000;
+int ID=1000; //ID
+
+public void Name (String fn, String ln) {
+firstName=fn;
+lastName=ln;}
+
+public void setID(){
+nextID++;
+ID=nextID;}
+
+    public String FirstName(){
+return firstName;}
+    public String LastName(){
+return lastName;}
+    public double ID(){
+return nextID;}
+    
+public static void main(String[] args) {
+ 
+Person Test=new Person();
+Test.Name("John", "Doe");
+Test.setID();
+Test.FirstName();
+System.out.println("First name: "+ Test.FirstName() );
+Test.LastName();
+System.out.println("Last name: "+ Test.LastName() );
+Test.ID();
+System.out.println("ID#: " + Test.ID() );
+
+Person Test2 = new Person();
+Test2.Name("Henry", "Meier");
+Test2.setID();
+Test2.FirstName();
+System.out.println("First name: "+ Test2.FirstName() );
+Test2.LastName();
+System.out.println("Last name: "+ Test2.LastName() );
+Test2.ID();
+System.out.println("ID#: " + Test2.ID() );
+    }//end main
+}//end class

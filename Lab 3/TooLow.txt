@@ -1,0 +1,10 @@
+package Thermostatcoolio;
+
+public class TooLow extends OutOfRange {
+public TooLow(){
+super ("Temperature too low!");
+}
+public TooLow(String message){
+super("Temperature too Low");
+}
+}

@@ -1,0 +1,8 @@
+run:
+The coordinates of this sphere are
+23.0,13.0,0.0
+With a radius of:
+6.0
+The surface area of this sphere is equal to 432.0
+The volume of this sphere is equal to 864.0
+BUILD SUCCESSFUL (total time: 0 seconds)

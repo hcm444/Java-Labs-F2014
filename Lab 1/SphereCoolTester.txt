@@ -1,0 +1,13 @@
+package spherecool;
+public class SphereCoolTester {
+    public static void main (String args[]) {
+        SphereCool t = new SphereCool();
+        t.X(23);
+        t.Y(12);
+        t.Y(13.0);
+        t.setR(6.0);
+        t.A();
+        t.V();
+        t.Atts();
+    }
+}

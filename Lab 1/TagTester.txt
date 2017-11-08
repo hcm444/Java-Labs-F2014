@@ -1,0 +1,34 @@
+//Henry Meier 9/13/2014
+//Lab 1 Part D
+
+package tagmaker;
+
+import java.util.Scanner; //run the scanner
+public class TagTester { //tests tags
+    
+    public static void main (String[] args){
+        
+    Scanner keyboard = new Scanner(System.in);
+    
+    // create tag
+    TagMaker testTag = new TagMaker("John Doe","Berkeley City College");
+    testTag.setName("John Doe");
+    testTag.setOrganization("Berkeley City College");
+    
+    // test all the get methods
+    System.out.println("getName: " + testTag.getName());
+    System.out.println("getOrganization: " + testTag.getOrganization());
+    
+    //print methods
+    testTag.printTag();
+    System.out.println("_________________________________________");
+    System.out.println("testTag.toString method: ");
+    System.out.println(testTag.toString());
+    System.out.println("_________________________________________");
+    System.out.println("testTag method: ");
+    System.out.println(testTag);
+    System.out.println("_________________________________________");
+    System.out.println("Print blank tag: ");
+    testTag.printBlankTag();
+    }
+}

@@ -1,0 +1,20 @@
+//Henry Meier 10/13/14
+//Lab 2 Part B
+package deck;
+public class DeckTester {
+    public static void main(String[] args) {
+        Deck dagoodDeck = new Deck();
+        Deck yourDeck = new Deck();
+        System.out.println("Initial Order:");
+        System.out.println(dagoodDeck.toString());
+        for (int i = 0; i < 20; i++) {
+            System.out.printf("Order %d%n", i);
+            dagoodDeck.shuffle();
+            System.out.println(dagoodDeck.toString());
+            if (dagoodDeck.equals(yourDeck)) {
+                System.out.println("Back to intial order!");
+                break;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+package person;
+import java.util.Scanner;
+public class PersonTester {
+    public static void main(String[] args) {
+        Person person;
+        Scanner keyboard = new Scanner(System.in);
+        String doAgain;
+        do {
+            System.out.println("Please enter the first name.");
+            String first = keyboard.nextLine();
+            System.out.println("Please enter the last name.");
+            String last = keyboard.nextLine();
+            person = new Person(first, last);
+            System.out.printf("You are making an ID for %s %s %n",
+                    person.getFirstName(), person.getLastName());
+            System.out.printf("Here is your ID for ");
+            person.printFullName();
+            System.out.println(person.toString());
+            System.out.println("Would you like to create a new ID? Enter yes or no.");
+            doAgain = keyboard.nextLine();
+        } while (doAgain.equalsIgnoreCase("yes"));
+    }

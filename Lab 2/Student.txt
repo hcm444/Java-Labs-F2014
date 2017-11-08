@@ -1,0 +1,55 @@
+package person;
+import java.util.*;
+public class Student extends Person {
+private ArrayList<String> studentArray;//?
+private String classRecord;
+private String grade;
+private String classTaken;
+public Student(String firstName, String lastName,
+String classTaken, String grade) {
+super(firstName, lastName);
+this.grade = grade;
+this.classTaken = classTaken + " ";
+this.classRecord = this.classTaken.concat(this.grade);
+}
+public Student(Student originalStudent) {
+super(originalStudent);
+grade = originalStudent.grade;
+classTaken = originalStudent.classTaken;
+} 
+public void setGrade(String grade) {
+if (!grade.equalsIgnoreCase("A") || !grade.equalsIgnoreCase("B")
+    || !grade.equalsIgnoreCase("C") || !grade.equalsIgnoreCase("D")
+    || !grade.equalsIgnoreCase("F") || !grade.equalsIgnoreCase("P")
+    || !grade.equalsIgnoreCase("NP")) {
+System.out.println("Please enter a grade of A, B, C, D, F, P or NP.");
+System.exit(0);
+} else {
+this.grade = grade.trim();
+}
+}
+public void setClass(String classTaken) {
+this.classTaken = classTaken + " ";
+}
+public void setClassRecord() {
+classRecord = this.classTaken.concat(this.grade);
+}
+public void addClassRecord() {
+studentArray.add(classRecord); //?
+}
+public String getGrade() {
+return grade;
+}
+public String getClassTaken() {
+return classTaken;
+}
+public void printTranscript() {
+for (String students : studentArray) {
+if (students.contains(this.lastName)
+        && students.contains(this.firstName)) {
+    System.out.printf("Transcript for %s, %s: %n%s%n",
+            this.lastName, this.firstName, classRecord);
+}
+}
+}
+}

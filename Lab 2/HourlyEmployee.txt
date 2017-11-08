@@ -1,0 +1,64 @@
+package person;
+import java.util.*;
+public class HourlyEmployee extends Employee {
+    private Double hourlyRate;
+    private Double dailyHours;
+    private ArrayList<Double> monthlyHoursArray = new ArrayList<>();
+    private Double monthlyHours;
+    private Double daysInMonth;
+    private Double averageWeeklyHours;
+    public HourlyEmployee(String lastName, String firstName, String department,
+            Double hourlyRate) {
+        super(lastName, firstName, department);
+        this.hourlyRate = hourlyRate;
+    }
+    public HourlyEmployee(HourlyEmployee otherHourlyEmployee) {
+        super(otherHourlyEmployee);
+        hourlyRate = otherHourlyEmployee.hourlyRate;
+    }
+    public void setDailyHours(Double dailyHours) {
+        if (dailyHours >= 0) {
+            this.dailyHours = dailyHours;
+        }
+    }
+    public void setMonthlyHours() {
+        if (dailyHours >= 0 && hourlyRate >= 0 && monthlyHoursArray.size() < daysInMonth) {
+            monthlyHoursArray.add(this.dailyHours);
+            for (Double hoursToday : monthlyHoursArray) {
+                this.monthlyHours += hoursToday;
+            }
+        } else {
+            monthlyHoursArray = new ArrayList<>();
+            this.monthlyHours = 0.0;
+        }
+    }
+    public void setHourlyRate(Double hourlyRate) { 
+        if (hourlyRate >= 0) {
+            this.hourlyRate = hourlyRate;
+        }
+    }
+    public Double getHourlyRate() {
+        return hourlyRate;
+    }
+    @Override
+    public Double getmonthlyWages() {
+        if (hourlyRate >= 0 && monthlyHours > 0) {
+            return monthlyHours * hourlyRate;
+        }
+        return 0.0;
+    }
+    public void setAverageWeeklyHours() {
+        this.averageWeeklyHours = (monthlyHours / daysInMonth) * 7.0;
+    }
+    @Override
+    public Double getAverageWeeklyHours() {
+        return averageWeeklyHours;
+    }
+    @Override
+    public void printEmployee() {
+        System.out.printf("Employee: %s, %s%n", lastName, firstName);
+        System.out.printf("Total hours worked for month: %.2d%n", monthlyHours);
+        System.out.printf("Average hours worked per week: %.2d%n", averageWeeklyHours);
+        System.out.printf("Total wages for month: %d", monthlyHours);
+    }
+}

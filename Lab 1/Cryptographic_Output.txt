@@ -1,0 +1,8 @@
+//Henry Meier
+
+run:
+The solution to the problem
+TOO + TOO + TOO + TOO = GOOD
+is
+T = 1, O = 6, G = 0, D = 4
+BUILD SUCCESSFUL (total time: 0 seconds)

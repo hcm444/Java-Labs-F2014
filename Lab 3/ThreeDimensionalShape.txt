@@ -1,0 +1,13 @@
+package shapes;
+
+public abstract class ThreeDimensionalShape extends Shapes {
+
+    public ThreeDimensionalShape() {
+        super();
+    }
+
+    public abstract double getArea();
+
+    public abstract double getVolume();
+
+}

@@ -1,0 +1,8 @@
+package shapes;
+
+public class Line extends OneDimensionalShape {
+
+    public Line(Point p1, Point p2) {
+        super(p1, p2);
+    }
+}

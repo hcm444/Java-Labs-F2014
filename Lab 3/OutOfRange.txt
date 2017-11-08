@@ -1,0 +1,9 @@
+package Thermostatcoolio;
+public class OutOfRange extends Exception {
+public OutOfRange(){
+super ("Temperature exception thrown!");
+}
+public OutOfRange(String message){
+super(message);
+}
+}

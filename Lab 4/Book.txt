@@ -1,0 +1,82 @@
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+
+public class Book implements Serializable{
+    private String title;
+    private ArrayList<String> authors;
+    private int catalogNumber;
+    private ArrayList<String> headlings;
+    private String publisher;
+    private int year;
+    private boolean circulating;
+
+    public Book(String title, ArrayList<String> authors, int catalogNumber, ArrayList<String> headlings, String publisher, int year, boolean circulating) {
+        this.title = title;
+        this.authors = authors;
+        this.catalogNumber = catalogNumber;
+        this.headlings = headlings;
+        this.publisher = publisher;
+        this.year = year;
+        this.circulating = circulating;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public ArrayList<String> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(ArrayList<String> authors) {
+        this.authors = authors;
+    }
+
+    public int getCatalogNumber() {
+        return catalogNumber;
+    }
+
+    public void setCatalogNumber(int catalogNumber) {
+        this.catalogNumber = catalogNumber;
+    }
+
+    public ArrayList<String> getHeadlings() {
+        return headlings;
+    }
+
+    public void setHeadlings(ArrayList<String> headlings) {
+        this.headlings = headlings;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public boolean isCirculating() {
+        return circulating;
+    }
+
+    public void setCirculating(boolean circulating) {
+        this.circulating = circulating;
+    }
+    
+    
+}

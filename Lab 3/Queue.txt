@@ -1,0 +1,29 @@
+package Queue;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+public class Queue
+{
+    public static void main(String[] args)
+    {
+        Comparator<String> comparator = new Priority();
+        PriorityQueue<String> q = 
+            new PriorityQueue<String>(10, comparator);
+        q.add("abbabababa"); //Add and Remove right here in the tester
+        q.add("Jill");
+        q.add("Henry");
+        q.add("Tardy");
+        q.add("Micheal Brown");
+        q.add("Officer Wilson");
+        q.add("Cornholio");
+        q.add("1243");
+        q.add("I was a good good boy that's why I ate the pie");
+        q.add("ayy lmao");
+        q.add("epik XD");
+        q.add("a sure thing?");
+        while (q.size() != 0)
+        {
+            System.out.println(q.remove());
+        }
+    }
+}
+
